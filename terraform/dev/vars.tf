@@ -1,5 +1,5 @@
 variable "region" {default = "ap-southeast-2"}
-variable "access_key" {default = "XXXXXXXXXXXXXXXXXXXXXXX"}
+variable "access_key" {default = "XXXXXXXXXXXXXXXXXXXXXXXXXXX"}
 variable "secret_key" {default = "YYYYYYYYYYYYYYYYYYYYY"}
 
 

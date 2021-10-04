@@ -1,6 +1,8 @@
 
+
 resource "aws_eks_cluster" "eks" {
   name     = "${var.cluster_name}"
+  #role_arn = "${aws_iam_role.eks_cluster.arn}"
   role_arn = "${var.eks_cluster_arn}"
   version = "${var.kube_version}"
   vpc_config {

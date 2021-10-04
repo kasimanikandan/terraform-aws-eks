@@ -1,8 +1,28 @@
 
 
+resource "aws_iam_role" "nodes_general" {
+  name = "eks-node-group-genernal"
+  assume_role_policy = <<EOF
+{
+        "Version":"2012-10-17",
+        "Statement":[
+          {
+            "Effect":"Allow",
+            "Principal":{
+                "Service":"ec2.amazonaws.com"
+              },
+            "Action":"sts:AssumeRole"
+          }
+        ]
+      }
+      EOF
+}
+
+
 resource "aws_eks_node_group" "nodes_general" {
   cluster_name  = "${aws_eks_cluster.eks.name}"
   node_group_name = "${var.node_group_name}"
+  #node_role_arn = "${aws_iam_role.nodes_general.arn}" # from role
   node_role_arn = "${var.node_group_arn}" # from role
   subnet_ids    = [
       "${var.private_subnet_id_1}",

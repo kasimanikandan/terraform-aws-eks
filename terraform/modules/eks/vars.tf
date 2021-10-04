@@ -6,7 +6,7 @@ variable "public_subnet_id_1" {}
 variable "public_subnet_id_2" {}
 
 variable "kube_version" {default = "1.20"}
-variable "cluster_name" {default = "eks-clsuter"}
+variable "cluster_name" {default = "eks-cluster"}
 variable "node_group_name" {default = "nodes-general"}
 
 #worker node capacity
@@ -17,4 +17,4 @@ variable "ami_type" {default = "AL2_x86_64"}
 variable "capacity_type" {default = "ON_DEMAND"}
 variable "disk_size" {default = 20}
 variable "force_update_version" {default = false}
-variable "instance_types" {default = "t2.micro"}
+variable "instance_types" {default = "t3.small"}
